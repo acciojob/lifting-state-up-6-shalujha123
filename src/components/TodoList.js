@@ -9,8 +9,12 @@ const TodoList = ({ todos, handleComplete }) => {
             <li key={index} className={todo.completed ? "completed" : ""}>
               {todo.text}
               {!todo.completed && (
-                <input type="button" value="Completed" onClick={() => handleComplete(index)} />
-                 
+                <button
+                  data-testid={`complete-btn-${index}`}
+                  onClick={() => handleComplete(index)}
+                >
+                  Complete
+                </button>
               )}
             </li>
           );
