@@ -6,10 +6,15 @@ const TodoList = ({ todos, handleComplete }) => {
       <ul>
         {todos.map((todo, index) => {
           return (
-            <li key={index}>
+            <li key={index} className={todo.completed ? "completed" : ""}>
               {todo.text}
               {!todo.completed && (
-                <button onClick={() => handleComplete(index)}>Complete</button>
+                <button
+                  data-testid={`complete-btn-${index}`}
+                  onClick={() => handleComplete(index)}
+                >
+                  Complete
+                </button>
               )}
             </li>
           );

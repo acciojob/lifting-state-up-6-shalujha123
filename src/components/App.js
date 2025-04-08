@@ -16,12 +16,13 @@ const App = () => {
   ]);
 
   function handleComplete(indexToUpdate) {
-    let newTodos = todos.map((todo,index)=> {
-      if(index === indexToUpdate){
-        return {...todo, completed: true}
+
+    let newTodos = todos.map((todo, index) => {
+      if (index === indexToUpdate) {
+        return { ...todo, completed: true };
       }
-      return todo
-    })
+      return todo;
+    });
     setTodos(newTodos);
   }
 
